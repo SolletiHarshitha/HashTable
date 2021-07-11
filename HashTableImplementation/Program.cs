@@ -16,9 +16,11 @@ namespace HashTableImplementation
                 hashTable.Add(key, word);
                 key++;
             }
-           
+            Console.WriteLine();
             Operation operation = new Operation();
             operation.Frequency(hashTable);
+            Console.WriteLine();
+            operation.Remove(hashTable, "avoidable");
         }
     }
 }

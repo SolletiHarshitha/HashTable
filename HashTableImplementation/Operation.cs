@@ -16,7 +16,19 @@ namespace HashTableImplementation
             }
             foreach (KeyValuePair<string, int> item in frequency)
             {
-                Console.WriteLine("frequency of word \"" + item.Key + "\" is " + item.Value);
+                Console.WriteLine("Frequency of word \"" + item.Key + "\" is " + item.Value);
+            }
+        }
+
+        public void Remove(MyMapNode<int, string> hash, string word)
+        {
+            for (int key = 0; key < hash.size; key++)
+            {
+                if (hash.Get(key).Equals(word))
+                {
+                    hash.Remove(key);
+                    Console.WriteLine("The word \""+word+"\" is removed successfully from the paragraph.");
+                }
             }
         }
     }
