@@ -7,13 +7,18 @@ namespace HashTableImplementation
         static void Main(string[] args)
         {
             Console.WriteLine("---------------------Hash Table-----------------------");
-            MyMapNode<int, string> hashTable = new MyMapNode<int, string>(6);
-            hashTable.Add(0, "To");
-            hashTable.Add(1, "be");
-            hashTable.Add(2, "or");
-            hashTable.Add(3, "not");
-            hashTable.Add(4, "to");
-            hashTable.Add(5, "be");
+            string sentence = "To be or not to be";
+            string[] words = sentence.Split(' ');
+            MyMapNode<int, string> hashTable = new MyMapNode<int, string>(words.Length);
+            int key = 0;
+            foreach(string word in words)
+            {
+                hashTable.Add(key, word);
+                key++;
+            }
+       
+            Operation operation = new Operation();
+            operation.Frequency(hashTable);
         }
     }
 }

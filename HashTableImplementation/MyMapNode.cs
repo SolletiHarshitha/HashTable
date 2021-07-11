@@ -11,8 +11,8 @@ namespace HashTableImplementation
             public k Key { get; set; }
             public v Value { get; set; }
         }
-        private readonly int size;
-        private readonly LinkedList<KeyValue<K, V>>[] items;
+        public int size;
+        public LinkedList<KeyValue<K, V>>[] items;
 
         public MyMapNode(int size)
         {
@@ -49,6 +49,20 @@ namespace HashTableImplementation
             { Key = key, Value = value } ;
             linkedList.AddLast(item);
             Console.WriteLine(item.Key+" "+item.Value);
-        } 
+        }
+
+        public V Get(K key)
+        {
+            int position = GetArrayPosition(key);
+            LinkedList<KeyValue<K, V>> linkedList = GetLinkedList(position);
+            foreach (KeyValue<K, V> item in linkedList)
+            {
+                if (item.Key.Equals(key))
+                {
+                    return item.Value;
+                }
+            }
+            return default(V);
+        }
     }
 }
