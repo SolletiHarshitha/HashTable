@@ -7,7 +7,7 @@ namespace HashTableImplementation
         static void Main(string[] args)
         {
             Console.WriteLine("---------------------Hash Table-----------------------");
-            string sentence = "To be or not to be";
+            string sentence = "Paranoids are not paranoid because they are paranoid but because they keep putting themselves deliberately into paranoid avoidable situations";
             string[] words = sentence.Split(' ');
             MyMapNode<int, string> hashTable = new MyMapNode<int, string>(words.Length);
             int key = 0;
